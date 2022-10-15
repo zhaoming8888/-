@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+:root {
+  --green-main:#0a8531;
+  --green-bright:#99ce1c;
+  --gray-dark:#333;
+  --gray-light:#f7f7f7;
+  --gray-medium:#aaa;
+  --lightgray:rgba(0,0,0,.2);
+
+  --text-color:#333;
+  --text-color-alt:white;
+  --text-heading:'Roboto Slab', serif;
+  --text-body:'Roboto Condensed', sans-serif;
+
+  --shadow-color-main:rgba(0,0,0,.25);
+  --radius:5px;
+}
+
+html {
+  display:grid;
+  place-items:center;
+  min-height:100vh;
+  font-family:'Roboto Condensed', sans-serif;
+  background:
+    linear-gradient(to bottom left, transparent 48%, var(--gray-light) 48%, var(--gray-light) 52%, transparent 52%);
+  background-size:50px 50px;
+  background-repeat: repeat;
+  background-position:0 0;
+  background-attachment:fixed;
+}
+* {
+  box-sizing:border-box;
+}
+
+body {
+  width:100%;
+  max-width:1000px;
+}
+
+.price_card {
+  width:calc(33% - 2rem);
+  padding:0;
+/*   background:#666;
+  background:OliveDrab; */
+  color:white;
+  display:inline-block;
+  border-radius:.5rem;
+/*   border:1px solid var(--lightgray); */
+  margin:1rem;
+  vertical-align:middle;
+  transition:.25s;
+  position:relative;
+  filter:drop-shadow(5px 5px 5px rgba(0,0,0,.5));
+}
+
+.price_card:hover {
+  transform:scale(1.1);
+}
+
+.price_card * {
+  padding:0 2rem;
+  width:100%;  
+}
+
+.price_card:nth-child(1) {
+  background:radial-gradient(circle at 50% -5%, transparent 10%, OliveDrab 10%);
+  color:white;
+}
+.price_card:nth-child(2) {
+  background:radial-gradient(circle at 50% -5%, transparent 10%, var(--green-bright) 10%);
+  color:white;
+}
+.price_card:nth-child(3) {
+  background:radial-gradient(circle at 50% -5%, transparent 10%, var(--green-main) 10%);
+  color:white;
+}
+
+.price_card:nth-child(1) .card_icon { 
+  color: OliveDrab;
+}
+.price_card:nth-child(2) .card_icon { 
+  color: var(--green-bright); 
+  transform:rotate(45deg) translate(5%,0%);
+}
+.price_card:nth-child(3) .card_icon { 
+  color: var(--green-main); 
+}
+
+.card_icon {
+  font-size:5rem;
+  position:absolute;
+  left:0;
+  top:-5rem;
+  text-align:center;
+}
+
+.card_title {
+  margin:0;
+  padding:2.25rem 2rem 0 2rem;
+/*   background:var(--lightgray); */
+  text-align:center;
+  border-radius:5px 5px 0 0;
+}
+.price_total {
+  font-family:'Roboto Slab';
+  text-align:center;
+  font-size:3rem;
+  font-weight:700;
+  margin:0 0 1.5rem 0;
+}
+
+.services_block {
+  width:100%;
+}
+
+.service {
+  width:100%;
+  display:inline-block;
+  font-size:.9rem;
+  text-align:center;
+  margin-top:0;
+  margin-bottom:0;
+  padding:0;
+  cursor:pointer;
+}
+
+.add {
+  font-weight:900;
+}
+
+.breakdown_of_costs {
+  padding:2rem;
+}
+
+.breakdown_of_costs * {
+  font-size:.75rem;
+  padding:0;
+}
+
+.breakdown_of_costs table {
+  margin:0 auto;
+  border-top:1px dotted var(--lightgray);
+  padding-top:.5rem;
+  border-spacing:0;
+  border-collapse: separate;
+}
+.breakdown_of_costs th {
+  letter-spacing:0;
+  colspan:2;
+}
+.breakdown_of_costs td {
+  padding:.2rem .4rem;
+  border-bottom:1px solid var(--lightgray);
+}
+.breakdown_of_costs td:nth-child(even) {
+  text-align:right;
+}
