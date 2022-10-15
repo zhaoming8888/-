@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>17sucai - Vue Js 2 - password generator (vue04)</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<div id="app">
+  <h1>Pssword Generator</h1>
+  <div class="card">
+    <div class="generator">
+      <div class="g-result-container">
+        <div class="g-result">
+          <input
+              id="g-password"
+              type="text"
+              v-bind:value="password"
+              disabled
+          >
+          <i
+             class="fa fa-link"
+             v-on:click="onCopyPass"
+          >  
+          </i>
+        </div>
+        <input
+            type="submit"
+            value="Generate New Password"
+            class="g-btn"
+            v-on:click="onGenerate"
+        >
+      </div>
+    </div>
+    <div class="options">
+      <h2>Options</h2>
+      <div class="g-row g-m-15">
+        <label for="g-length" class="g-l-length">Pass Length</label>
+      </div>
+      <div class="g-row">
+        <input
+               class="g-range"
+               type="range" 
+               min="3" 
+               max="30" 
+               v-bind:value="gLength"
+               v-model="gLength"
+        >
+        <input
+               class="g-number"
+               type="number"
+               v-bind:value="gLength"
+               v-model="gLength"       
+        >
+      </div>
+      <div class="g-row g-m-15">
+        <label class="g-l-complexity">Pass Complexity</label>
+      </div>
+      <div
+           class="g-row g-m-15"
+           v-for="type in characters"
+      >
+        <input
+               type="checkbox"
+               v-bind:checked="type.checked"
+               v-on:click="type.checked = !type.checked"
+         >
+        <label for="">{{type.name}}</label>
+        <br/>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
